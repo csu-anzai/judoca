@@ -10,6 +10,8 @@ A aplicação irá rodar sobre a URL localhost:3000
 
 ### Onde inserir os arquivos de front-end
 **Arquivos HTML:** app/view
+
 OBS: Alterar o formato de .html para .ejs
+
 
 **Arquivos CSS e JS:** app/public/css e app/public/js
