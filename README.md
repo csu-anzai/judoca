@@ -2,11 +2,14 @@
 
 ### Como rodar o projeto
 > Instalar o NodeJS;
-> Caminhar atÈ o diretÛrio pelo prompt e executar o comando **node app**
-A aplicaÁ„o ir· rodar sobre a URL localhost:3000
+
+> Caminhar at√© o diret√≥rio pelo prompt e executar o comando **node app**
+
+A aplica√ß√£o ir√° rodar sobre a URL localhost:3000
+
 
 ### Onde inserir os arquivos de front-end
-**Arquivos HTML: **app/view
+**Arquivos HTML:** app/view
 OBS: Alterar o formato de .html para .ejs
 
-**Arquivos CSS e JS: **app/public/css e app/public/js
+**Arquivos CSS e JS:** app/public/css e app/public/js
