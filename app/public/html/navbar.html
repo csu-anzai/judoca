@@ -1,27 +1,47 @@
 <style>
-  .estiloNav{
-    background-color: #b4bade !important;
-    font-weight: bolder;
-  }
+    #cabecalho{
+        width: 100%;
+        height: 30%;
+    }
+    
+    #botao_inicio{
+        background-color: #061991;
+        color: rgb(240, 240, 240);
+        border-radius: 6px;
+        font-size: 130%;
+        font-weight: 400;
+        text-align: center;
+        width: 7%;
+        height: 30px;
+        padding: 1px 0;
+    }
+    
+    .estiloNav{
+        background-color: #b4bade !important;
+        font-weight: bolder;
+    }
 
-  .nav-link{
-    color: #061991 !important;
-  }
+    .nav-link{
+        color: #061991 !important;
+    }
 
-  .nav .navbar-nav{
-    display: flex !important;
-    justify-content: space-around !important;
-  }
 </style>
 
-<nav class="navbar navbar-expand-lg estiloNav">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
+<!-- Cabeçalho -->
+<div id="cabecalho">
+    
+</div>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light estiloNav">
+  <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Alterna navegação">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-    <ul class="nav navbar-nav d-flex justify-content-around" style="width: 100%">
+      <a class="navbar-brand" id="botao_inicio" href="#">Início</a>
+      <ul class="nav navbar-nav d-flex justify-content-around ml-auto" style="width: 100%">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Alunos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
