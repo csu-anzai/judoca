@@ -1,35 +1,76 @@
 <style>
     #cabecalho{
         width: 100%;
-        height: 30%;
-    }
-    
-    #botao_inicio{
-        background-color: #061991;
-        color: rgb(240, 240, 240);
-        border-radius: 6px;
-        font-size: 130%;
-        font-weight: 400;
-        text-align: center;
-        width: 7%;
-        height: 30px;
-        padding: 1px 0;
-    }
-    
-    .estiloNav{
-        background-color: #b4bade !important;
-        font-weight: bolder;
+        height: 20vh;
     }
 
-    .nav-link{
-        color: #061991 !important;
+    #img_cabecalho{
+        width: 100%;
+        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
+        /* Tamanho calculado com Javascript
+            Função calculaTamanhoImagem, localizada no fim do arquivo
+        */
+    }
+    
+    /* Media query para telas de computadores */
+    @media (min-width: 992px){
+        .li_botao_nav{
+            display: flex;
+            align-items: center;
+        }
+
+        .li_botao_nav .dropdown-menu{
+            background-color: #b4bade;
+        }
+
+        .botao_nav{
+            background-color: #b4bade;
+            color: rgb(240, 240, 240);
+            border-radius: 5px;
+            text-align: center;
+            padding: 0.1rem 1rem;
+        }
+
+        .botao_nav:hover{
+            background-color: rgb(240, 240, 240);
+        }
+
+
+        #botao_inicio_nav{
+            background-color: #061991 !important;
+            color: white !important;
+        }
+
+        .estiloNav{
+            background-color: #b4bade !important;
+            font-weight: bolder;
+        }
+
+        .nav-link{
+            color: #061991 !important;
+        }
+        
+        #div_img_fundo{
+            width: 80%;
+            height: 60vh;
+            margin: 4vh 10%;
+        }
+        
+        #img_fundo{
+            width: 100%;
+            height: 100%;
+            max-height: 100%;
+            max-width: 100%;
+        }
     }
 
 </style>
 
 <!-- Cabeçalho -->
 <div id="cabecalho">
-    
+    <img id="img_cabecalho" src="img/Cabecalho.png">
 </div>
 
 <!-- Navbar -->
@@ -38,21 +79,13 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <a class="navbar-brand" id="botao_inicio" href="#">Início</a>
       <ul class="nav navbar-nav d-flex justify-content-around ml-auto" style="width: 100%">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Alunos
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="/aluno/adicionar">Adicionar</a>
-          <a class="dropdown-item" href="/aluno/alterar">Alterar</a>
-          <a class="dropdown-item" href="/aluno/consultar">Consultar</a>
-          <a class="dropdown-item" href="/aluno/remover">Remover</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item li_botao_nav" id="li_botao_inicio_nav">
+            <a class="nav-link botao_nav" id="botao_inicio_nav" href="/">Início</a>
+        </li>
+
+      <li class="nav-item dropdown li_botao_nav">
+        <a class="nav-link dropdown-toggle botao_nav" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Professores
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -62,8 +95,20 @@
           <a class="dropdown-item" href="/professor/remover">Remover</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown li_botao_nav">
+        <a class="nav-link dropdown-toggle botao_nav" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+          Alunos
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="/aluno/adicionar">Adicionar</a>
+          <a class="dropdown-item" href="/aluno/alterar">Alterar</a>
+          <a class="dropdown-item" href="/aluno/consultar">Consultar</a>
+          <a class="dropdown-item" href="/aluno/remover">Remover</a>
+        </div>
+      </li>
+    
+      <li class="nav-item dropdown li_botao_nav">
+        <a class="nav-link dropdown-toggle botao_nav" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Instituições
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -71,8 +116,8 @@
           <a class="dropdown-item" href="/instituicao/remover">Remover</a>
         </div>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <li class="nav-item dropdown li_botao_nav">
+        <a class="nav-link dropdown-toggle botao_nav" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Relatórios
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
@@ -82,3 +127,8 @@
     </ul>
   </div>
 </nav>
+
+<!-- Imagem de Fundo -->
+<div id="div_img_fundo">
+    <img src="img/logo.png" id="img_fundo">
+</div>
