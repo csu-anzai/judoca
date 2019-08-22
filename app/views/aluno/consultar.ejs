@@ -9,19 +9,25 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
-    
-    <!-- Carrega menu de navegação -->
-    <script type="text/javascript">
-        $(document).ready(function(){
-          $("#nav").load('../html/navbar.html');
-        });
-    </script>
-
 </head>
 
 <body>
     <span id="nav"></span>
+    <!-- Carrega menu de navegação -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#nav").load('/html/navbar.html');
+        });
+    </script>
 
+    <div id="div_rodape"></div>
+    <!-- Carrega rodapé -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#div_rodape").load('/html/rodape.html');
+        });
+    </script>
+    
     <h1>Consultar Aluno</h1>
     
 </body>
