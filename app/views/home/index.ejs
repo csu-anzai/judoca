@@ -6,21 +6,59 @@
     
     <!-- Import Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/padrao.css" crossorigin="anonymous">
+    
+    <style>
+        @media (min-width: 992px){
+            #div_principal{
+                background: url('/img/Logo.png');
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+            }
+        }
+    </style>
 </head>
 
 <body>
     <span id="nav"></span>
     <!-- Carrega menu de navegação -->
     <script type="text/javascript">
-        $(document).ready(async function(){
-          await $("#nav").load('/html/navbar.html');
+        $(document).ready(function(){
+          $("#nav").load('/html/navbar.html');
         });
     </script>
 
+    <!-- Div Principal. Seu tamanho é calculado no script abaixo -->
     <div id="div_principal"></div>
+    <script>
+        var calculaTamanhoDivPrincipal = function () {
+            var div_cabecalho = document.getElementById('cabecalho');
+            var div_navbar = document.getElementsByClassName('navbar')[0];
+            var div_rodape = document.getElementById('div_rodape');
+            if(div_cabecalho != null && div_navbar != null && div_rodape != null){
+                // Calcula a altura das divs #cabecalho, .navbar e #div_rodape
+                var altura_body = document.getElementsByTagName('body')[0].offsetHeight;
+                var altura_cabecalho = div_cabecalho.offsetHeight;
+                var altura_navbar = div_navbar.offsetHeight;
+                var altura_rodape = div_rodape.offsetHeight;
+                var altura_total = altura_body - altura_cabecalho - altura_navbar - altura_rodape;
+                
+                var div_principal = document.getElementById('div_principal');
+                var margem = 30;
+                div_principal.style.height = altura_total - (margem*2) + "px";
+                div_principal.style.margin = margem + "px 0";
+                return true;
+            }
+            setTimeout(calculaTamanhoDivPrincipal, 100);
+            return false;
+        }
+        calculaTamanhoDivPrincipal();
+    </script>
 
     <div id="div_rodape"></div>
     <!-- Carrega rodapé -->
