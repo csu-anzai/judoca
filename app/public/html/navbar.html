@@ -1,3 +1,32 @@
+<!-- Script que adiciona ao botão correspondente à página um estilo diferente -->
+<script>
+    function alteraCorBotaoNav(nome_botao){
+        // Acharemos qual o botão a ser modificado pela URL da página.
+        // Se for http://localhost/professor/adicionar, será o botão professor.
+        var url = window.location.href;
+        
+        var botao;
+        if(url.search("professor") != -1){
+            botao = "professores";
+        }
+        else if(url.search("aluno") != -1){
+            botao = "alunos";
+        }
+        else if(url.search("instituicao") != -1){
+            botao = "instituicoes";
+        }
+        else if(url.search("relatorio") != -1){
+            botao = "relatorios";
+        }
+        else{
+            botao = "inicio";
+        }
+        
+        $('.botao_' + botao).attr('class', ' nav-link botao_nav botao_selecionado');
+    }
+    alteraCorBotaoNav();
+</script>
+
 <style>
     #cabecalho{
         width: 100%;
@@ -34,12 +63,6 @@
             background-color: rgb(240, 240, 240);
         }
 
-
-        #botao_inicio_nav{
-            background-color: #061991 !important;
-            color: white !important;
-        }
-
         .estiloNav{
             background-color: #b4bade !important;
             font-weight: bolder;
@@ -48,8 +71,14 @@
         .nav-link{
             color: #061991 !important;
         }
-      }
+        
+        .botao_selecionado{
+            background-color: #061991 !important;
+            color: white !important;
+            border-radius: 5px;
 
+        }
+      }
 </style>
 
 <!-- Cabeçalho -->
@@ -64,12 +93,12 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
       <ul class="nav navbar-nav d-flex justify-content-around ml-auto" style="width: 100%">
-        <li class="nav-item li_botao_nav" id="li_botao_inicio_nav">
-            <a class="nav-link botao_nav" id="botao_inicio_nav" href="/">Início</a>
+        <li class="nav-item li_botao_nav">
+            <a class="nav-link botao_nav botao_inicio" href="/">Início</a>
         </li>
 
       <li class="nav-item dropdown li_botao_nav">
-        <a class="nav-link dropdown-toggle botao_nav" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle botao_nav botao_professores" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Professores
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -80,7 +109,7 @@
         </div>
       </li>
       <li class="nav-item dropdown li_botao_nav">
-        <a class="nav-link dropdown-toggle botao_nav" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
+        <a class="nav-link dropdown-toggle botao_nav botao_alunos" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">
           Alunos
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -92,7 +121,7 @@
       </li>
     
       <li class="nav-item dropdown li_botao_nav">
-        <a class="nav-link dropdown-toggle botao_nav" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle botao_nav botao_instituicoes" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Instituições
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
@@ -101,11 +130,11 @@
         </div>
       </li>
       <li class="nav-item dropdown li_botao_nav">
-        <a class="nav-link dropdown-toggle botao_nav" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle botao_nav botao_relatorios" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Relatórios
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="#">Aniversariantes</a>
+          <a class="dropdown-item" href="/relatorio/aniversariantes">Aniversariantes</a>
         </div>
       </li>
     </ul>
