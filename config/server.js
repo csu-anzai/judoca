@@ -22,6 +22,7 @@ consign()
 	.then('./app/controllers')
 	.then('./config/db_config.js')
 	.then('./app/models')
+	.then('./app/class')
 	.into(app);
 
 // Retorna a variável app
