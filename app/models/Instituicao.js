@@ -1,5 +1,5 @@
-function ModelInstituicao(express){
-    this._connection = express.config.db_config;
+function ModelInstituicao(app){
+    this._connection = app.config.db_config;
 
     this.query = function(sql, callback){
         this._connection.connect(function(err){
@@ -15,7 +15,7 @@ function ModelInstituicao(express){
         })
     }
 
-    // Recebemos um objeto entidade e um objeto endereco e inserimos no banco
+    // Recebemos um objeto entidade e um objeto endereço e inserimos no banco
     this.insertEntidade = function(entidade, callback){
         var values = [
             [
