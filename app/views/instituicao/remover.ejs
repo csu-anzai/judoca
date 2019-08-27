@@ -30,7 +30,94 @@
         });
     </script>
     
-    <h1>Remover Instituicao</h1>
+    <div class="container" style="float: left;">
+        <form>        
+            <br />
+            <!-- Título -->
+            <h3 style="color: #061991">Excluir Instituição</h3>
+
+            <br>
+            <!-- Campos -->
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="CodigoInst">Nome da Instituição</label>
+                    <input type="text" name="NomeInst" id="NomeInst" class="form-control" placeholder="Nome" disabled="true">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="CnpjInst">CNPJ</label>
+                    <input type="number" name="CnpjInst" id="CnpjInst" class="form-control" placeholder="00.000.000/0000-00" disabled="true">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="TelInst1">Telefone 1</label>
+                    <input type="number" name="TelInst1" id="TelInst1" class="form-control" placeholder="(00) 00000-0000" disabled="true">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="TelInst2">Telefone 2</label>
+                    <input type="number" name="TelInst2" id="TelInst2" class="form-control" placeholder="(00) 00000-0000" disabled="true">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="EndrInst">Endereço</label>
+                    <input type="text" name="EndrInst" id="EndrInst" class="form-control" placeholder="Endereço" disabled="true">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-1">
+                    <label for="NumInst">Número</label>
+                    <input type="number" name="NumInst" id="NumInst" class="form-control" placeholder="Nº" disabled="true">
+                </div>
+                <div class="col-lg-3">
+                    <label for="ComplInst">Complemento</label>
+                    <input type="text" name="ComplInst" id="ComplInst" class="form-control" placeholder="Complemento" disabled="true">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="BairroInst">Bairro</label>
+                    <input type="text" name="BairroInst" id="BairroInst" class="form-control" placeholder="Bairro" disabled="true">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="CidadeInst">Cidade</label>
+                    <input type="text" name="CidadeInst" id="CidadeInst" class="form-control" placeholder="Cidade" disabled="true">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-3">
+                    <label for="CepInst">CEP</label>
+                    <input type="number" name="CepInst" id="CepInst" class="form-control" placeholder="00000-000" disabled="true">
+                </div>
+
+                <div class="col-lg-1">
+                    <label for="EstInst">Estado</label>
+                    <select class="form-control" id="EstadoInst" name="EstadoInst" disabled="true">
+                        <option>**</option>
+                    </select>
+                </div>                
+            </div>
+
+            <br />
+            <!-- Botões da Tela -->            
+            <button type="submit" name="Excluir" class="btn btn-danger">Excluir</button>
+        
+        </form>
+    </div>
     
 </body>
 </html>

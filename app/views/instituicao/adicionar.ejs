@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/css/padrao.css" crossorigin="anonymous">
 </head>
 
-<body>
+<body class="fundoForm">
     <span id="nav"></span>
     <!-- Carrega menu de navegação -->
     <script type="text/javascript">
@@ -24,13 +24,101 @@
 
     <div id="div_rodape"></div>
     <!-- Carrega rodapé -->
+    
+    <div class="container" style="float: left;">
+        <form>        
+            <br />
+            <!-- Título -->
+            <h3 style="color: #061991">Cadastrar Instituição</h3>
+
+            <br>
+            <!-- Campos -->
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="CodigoInst">Nome da Instituição</label>
+                    <input type="text" name="NomeInst" id="NomeInst" class="form-control" placeholder="Nome">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="CnpjInst">CNPJ</label>
+                    <input type="number" name="CnpjInst" id="CnpjInst" class="form-control" placeholder="00.000.000/0000-00">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="TelInst1">Telefone 1</label>
+                    <input type="number" name="TelInst1" id="TelInst1" class="form-control" placeholder="(00) 00000-0000">
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="TelInst2">Telefone 2</label>
+                    <input type="number" name="TelInst2" id="TelInst2" class="form-control" placeholder="(00) 00000-0000">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="EndrInst">Endereço</label>
+                    <input type="text" name="EndrInst" id="EndrInst" class="form-control" placeholder="Endereço">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-1">
+                    <label for="NumInst">Número</label>
+                    <input type="number" name="NumInst" id="NumInst" class="form-control" placeholder="Nº">
+                </div>
+                <div class="col-lg-3">
+                    <label for="ComplInst">Complemento</label>
+                    <input type="text" name="ComplInst" id="ComplInst" class="form-control" placeholder="Complemento">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="BairroInst">Bairro</label>
+                    <input type="text" name="BairroInst" id="BairroInst" class="form-control" placeholder="Bairro">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-4">
+                    <label for="CidadeInst">Cidade</label>
+                    <input type="text" name="CidadeInst" id="CidadeInst" class="form-control" placeholder="Cidade">
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-lg-3">
+                    <label for="CepInst">CEP</label>
+                    <input type="number" name="CepInst" id="CepInst" class="form-control" placeholder="00000-000">
+                </div>
+
+                <div class="col-lg-1">
+                    <label for="EstInst">Estado</label>
+                    <select class="form-control" id="EstadoInst" name="EstadoInst">
+                        <option>**</option>
+                    </select>
+                </div>                
+            </div>
+
+            <br />
+            <!-- Botões da Tela -->
+            <button type="button" name="Redefinir" class="btn btn-default" style="box-shadow: 2px 2px 2px rgba(13, 13, 13, 0.2); background-color: #f0f0f0; border: solid 1px gray;">Redefinir</button>
+            <button type="submit" name="Salvar" class="btn btn-success">Salvar</button>
+        
+        </form>
+    </div>
+
     <script type="text/javascript">
         $(document).ready(function(){
           $("#div_rodape").load('/html/rodape.html');
         });
     </script>
-    
-    <h1>Adicionar Instituicao</h1>
-    
 </body>
 </html>
