@@ -2,15 +2,6 @@ DROP DATABASE IF EXISTS judoca;
 CREATE DATABASE judoca;
 USE judoca;
 
-DROP TABLE IF EXISTS instituicao;
-CREATE TABLE instituicao (
-  id_inst INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
-  nome VARCHAR(255)  NULL  ,
-  cnpj VARCHAR(255)  NULL  ,
-  tel1 INTEGER UNSIGNED  NULL  ,
-  tel2 INTEGER UNSIGNED  NULL    ,
-PRIMARY KEY(id_inst));
-
 DROP TABLE IF EXISTS endereco;
 CREATE TABLE endereco (
   id_end INTEGER UNSIGNED  NOT NULL AUTO_INCREMENT,
@@ -22,6 +13,18 @@ CREATE TABLE endereco (
   cep INTEGER UNSIGNED  NULL  ,
   comp VARCHAR(255)  NULL    ,
 PRIMARY KEY(id_end));
+
+DROP TABLE IF EXISTS instituicao;
+CREATE TABLE instituicao (
+  id_inst INTEGER UNSIGNED  NOT NULL   AUTO_INCREMENT,
+  id_end INTEGER UNSIGNED NOT NULL,
+  nome VARCHAR(255)  NULL  ,
+  cnpj VARCHAR(255)  NULL  ,
+  tel1 INTEGER UNSIGNED  NULL  ,
+  tel2 INTEGER UNSIGNED  NULL    ,
+  PRIMARY KEY(id_inst)  ,
+  FOREIGN KEY (id_end) REFERENCES endereco(id_end)
+);
 
 DROP TABLE IF EXISTS responsavel;
 CREATE TABLE responsavel (
