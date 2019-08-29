@@ -26,7 +26,7 @@
     <!-- Carrega rodapé -->
     
     <div class="container" style="float: left; padding-bottom: 60px;">
-        <form method="POST" action="">        
+        <form method="POST" action="/instituicao/adicionar">        
             <br />
             <!-- Título -->
             <h3 style="color: #061991">Cadastrar Instituição</h3>
@@ -103,6 +103,9 @@
                     <label for="EstInst">Estado</label>
                     <select class="form-control" id="EstadoInst" name="EstadoInst">
                         <option>**</option>
+                        <%for (var i = 0; i < listaEstado.length; i++){%>
+                            <option><%=listaEstado[i]%></option>
+                        <%}%>
                     </select>
                 </div>                
             </div>
