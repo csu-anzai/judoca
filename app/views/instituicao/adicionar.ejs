@@ -10,6 +10,53 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 
+    <!-- Import JQuery Mask -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.11/jquery.mask.min.js"></script>
+
+    <!-- Criação das máscaras dos campos do formulário -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+           $("#CnpjInst").mask("99.999.999/9999-99");
+           $("#TelInst1").mask("(00) 00000-0000");
+           $("#TelInst2").mask("(00) 00000-0000");
+           $("#CepInst").mask("00000-000");
+        });
+
+        function validaDigito(evento){
+            var e = evento || window.event;
+            var dig = e.keyCode || e.which;
+            
+            // Valida o valor lido pelo teclado
+            if (!e.shiftdig && !e.altdig && !e.ctrldig &&
+                // numbers   
+                dig >= 48 && dig <= 57 ||
+                // Numeric digpad
+                dig >= 96 && dig <= 105 ||
+                // Backspace and Tab and Enter
+                dig == 8 || dig == 9 || dig == 13 ||
+                // Home and End
+                dig == 35 || dig == 36 ||
+                // left and right arrows
+                dig == 37 || dig == 39 ||
+                // Del and Ins
+                dig == 46 || dig == 45)
+            {
+                // Input Válido
+            }
+            else{
+                e.returnValue = false;
+                if (e.preventDefault) e.preventDefault();
+            }
+        }
+
+        function redefinirInputs(){
+            var inputs = document.getElementsByTagName('input');
+            for(var i = 0; i < inputs.length; i++){
+                inputs[i].value = '';
+            }
+        }
+    </script>
+
     <link rel="stylesheet" href="/css/padrao.css" crossorigin="anonymous">
 </head>
 
@@ -36,85 +83,83 @@
             <div class="form-row">
                 <div class="col-lg-4">
                     <label for="CodigoInst">Nome da Instituição</label>
-                    <input type="text" name="NomeInst" id="NomeInst" class="form-control" placeholder="Nome">
+                    <input type="text" name="NomeInst" id="NomeInst" class="form-control" placeholder="Nome" required value="Instituicao do José">
                 </div>
             </div>
             
             <div class="form-row">
                 <div class="col-lg-4">
                     <label for="CnpjInst">CNPJ</label>
-                    <input type="number" name="CnpjInst" id="CnpjInst" class="form-control" placeholder="00.000.000/0000-00">
+                    <input type="text" name="CnpjInst" id="CnpjInst" class="form-control" placeholder="00.000.000/0000-00" required onkeydown="validaDigito(event)" value="00.000.000/0000-00">
                 </div>
             </div>
             
             <div class="form-row">
                 <div class="col-lg-4">
                     <label for="TelInst1">Telefone 1</label>
-                    <input type="number" name="TelInst1" id="TelInst1" class="form-control" placeholder="(00) 00000-0000">
+                    <input type="text" name="TelInst1" id="TelInst1" class="form-control" placeholder="(00) 00000-0000" required value="(00) 00000-0000">
                 </div>
             </div>
             
             <div class="form-row">
                 <div class="col-lg-4">
                     <label for="TelInst2">Telefone 2</label>
-                    <input type="number" name="TelInst2" id="TelInst2" class="form-control" placeholder="(00) 00000-0000">
+                    <input type="text" name="TelInst2" id="TelInst2" class="form-control" placeholder="(00) 00000-0000" required value="(11) 11111-1111">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="col-lg-4">
                     <label for="EndrInst">Endereço</label>
-                    <input type="text" name="EndrInst" id="EndrInst" class="form-control" placeholder="Endereço">
+                    <input type="text" name="EndrInst" id="EndrInst" class="form-control" placeholder="Endereço" required value="Rua do José">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="col-lg-1">
                     <label for="NumInst">Número</label>
-                    <input type="number" name="NumInst" id="NumInst" class="form-control" placeholder="Nº">
+                    <input type="number" name="NumInst" id="NumInst" class="form-control" placeholder="Nº" required value="15">
                 </div>
                 <div class="col-lg-3">
                     <label for="ComplInst">Complemento</label>
-                    <input type="text" name="ComplInst" id="ComplInst" class="form-control" placeholder="Complemento">
+                    <input type="text" name="ComplInst" id="ComplInst" class="form-control" placeholder="Complemento" required value="Nenhum">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="col-lg-4">
                     <label for="BairroInst">Bairro</label>
-                    <input type="text" name="BairroInst" id="BairroInst" class="form-control" placeholder="Bairro">
+                    <input type="text" name="BairroInst" id="BairroInst" class="form-control" placeholder="Bairro" required value="Jd. Sao José">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="col-lg-4">
                     <label for="CidadeInst">Cidade</label>
-                    <input type="text" name="CidadeInst" id="CidadeInst" class="form-control" placeholder="Cidade">
+                    <input type="text" name="CidadeInst" id="CidadeInst" class="form-control" placeholder="Cidade" required value="São José">
                 </div>
             </div>
 
             <div class="form-row">
                 <div class="col-lg-3">
                     <label for="CepInst">CEP</label>
-                    <input type="number" name="CepInst" id="CepInst" class="form-control" placeholder="00000-000">
+                    <input type="text" name="CepInst" id="CepInst" class="form-control" placeholder="00000-000" required value="00000-000">
                 </div>
 
                 <div class="col-lg-1">
                     <label for="EstInst">Estado</label>
-                    <select class="form-control" id="EstadoInst" name="EstadoInst">
-                        <option>**</option>
+                    <select class="form-control" id="EstadoInst" name="EstadoInst" required>
                         <%for (var i = 0; i < listaEstado.length; i++){%>
                             <option><%=listaEstado[i]%></option>
                         <%}%>
                     </select>
-                </div>                
+                </div>
             </div>
 
             <br />
             <!-- Botões da Tela -->
-            <button type="button" name="Redefinir" class="btn btn-default" style="box-shadow: 2px 2px 2px rgba(13, 13, 13, 0.2); background-color: #f0f0f0; border: solid 1px gray;">Redefinir</button>
+            <button type="button" name="Redefinir" class="btn btn-default" style="box-shadow: 2px 2px 2px rgba(13, 13, 13, 0.2); background-color: #f0f0f0; border: solid 1px gray;" onclick="redefinirInputs()">Redefinir</button>
             <button type="submit" name="Salvar" class="btn btn-success">Salvar</button>
-        
         </form>
     </div>
 

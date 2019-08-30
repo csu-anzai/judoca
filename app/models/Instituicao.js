@@ -16,17 +16,26 @@ function ModelInstituicao(app){
     }
 
     // Recebemos um objeto entidade e um objeto endereço e inserimos no banco
-    this.insertEntidade = function(entidade, callback){
+    this.insertInstituicao = function(instituicao, callback){
         var values = [
             [
-                entidade.nome,
-                entidade.cnpj,
-                entidade.tel1,
-                entidade.tel2
+                instituicao.getNome(),
+                instituicao.getCnpj(),
+                instituicao.getTel1(),
+                instituicao.getTel2(),
+                instituicao.getEndereco().getRua(),
+                instituicao.getEndereco().getNumero(),
+                instituicao.getEndereco().getBairro(),
+                instituicao.getEndereco().getCidade(),
+                instituicao.getEndereco().getEstado(),
+                instituicao.getEndereco().getCep(),
+                instituicao.getEndereco().getComplemento()
             ]
         ];
 
-        this._connectTION.connect(function(err){
+        console.log(values);
+
+        this._connection.connect(function(err){
             if (err) throw err;
             console.log("Connected!");
 
@@ -34,7 +43,7 @@ function ModelInstituicao(app){
                 sql,
                 function(err, result){
                     if(err) throw err;
-                    return callback(result);
+                    return callback(result); // Essa função é o segundo parâmetro enviado na chamada de insertEntidade
                 }
             )
         })

@@ -3,6 +3,7 @@ function Instituicao(){
 	this._cnpj = null;
 	this._tel1 = null;
 	this._tel2 = null;
+	this._endereco = null;
 
 	this.getNome = function(){
 		return this._nome;
@@ -27,6 +28,12 @@ function Instituicao(){
 	}
 	this.setTel2 = function(new_value){
 		this._tel2 = new_value;
+	}
+	this.getEndereco = function(){
+		return this._endereco;
+	}
+	this.setEndereco = function(new_value){
+		this._endereco = new_value;
 	}
 }
 
