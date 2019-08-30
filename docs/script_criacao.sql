@@ -10,7 +10,7 @@ CREATE TABLE endereco (
   bairro VARCHAR(255)  NULL  ,
   cidade VARCHAR(255)  NULL  ,
   estado VARCHAR(2)  NULL  ,
-  cep INTEGER UNSIGNED  NULL  ,
+  cep VARCHAR(9)  NULL  ,
   comp VARCHAR(255)  NULL    ,
 PRIMARY KEY(id_end));
 
@@ -20,8 +20,8 @@ CREATE TABLE instituicao (
   id_end INTEGER UNSIGNED NOT NULL,
   nome VARCHAR(255)  NULL  ,
   cnpj VARCHAR(255)  NULL  ,
-  tel1 INTEGER UNSIGNED  NULL  ,
-  tel2 INTEGER UNSIGNED  NULL    ,
+  tel1 VARCHAR(16)   NULL  ,
+  tel2 VARCHAR(16)   NULL    ,
   PRIMARY KEY(id_inst)  ,
   FOREIGN KEY (id_end) REFERENCES endereco(id_end)
 );
