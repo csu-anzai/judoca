@@ -7,7 +7,7 @@ module.exports = function(app){
 		app.app.controllers.ControllerInstituicao.insereInstituicao(app, req, res);
 	});
 
-	app.get('/instituicao/remover', function(req, res){
-		res.render('instituicao/remover');
+	app.get('/instituicao/index', function(req, res){
+		app.app.controllers.ControllerInstituicao.renderIndexInstituicao(app, req, res);
 	});
 }

@@ -46,3 +46,7 @@ module.exports.insereInstituicao = function(app, req, res){
 module.exports.renderInstituicao = function(app, req, res){
   res.render('instituicao/adicionar', {listaEstado: listaEstado});
 }
+
+module.exports.renderIndexInstituicao = function(app, req, res){
+  res.render('instituicao/index');
+}

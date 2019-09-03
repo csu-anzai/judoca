@@ -8,3 +8,12 @@ html, body{
 	background-position: right;
 	background-size: 30%;
 }
+
+.cabecalhoTable{
+	background-color: #b4bade;
+	color: #061991; 
+}
+
+.tabela{
+	border-color: #838cc8 !important;
+}
