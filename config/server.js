@@ -16,12 +16,17 @@ app.set('views', './app/views');
 // Configurando diretório de arquivos estáticos
 app.use(express.static('./app/public'));
 
+// Configuração Express Vaidator
+var expressValidator = require('express-validator');
+app.use(expressValidator());
+
 // Importação das rotas, controllers, etc
 consign()
 	.include('./app/routes')
 	.then('./app/controllers')
 	.then('./config/db_config.js')
 	.then('./app/models')
+	.then('./app/class')
 	.into(app);
 
 // Retorna a variável app

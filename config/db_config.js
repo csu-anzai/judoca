@@ -1,5 +1,13 @@
-// var MongoClient = require('mongodb').MongoClient;
+var mysql = require('mysql');
 
-//module.exports = function(){
-//	return MongoClient;
-//}
+// Esse comando recebe um JSON como parâmetro!
+var connection = mysql.createConnection({
+    host : 'localhost',
+    user : 'root',
+    password : '',
+    database : 'judoca'
+});
+
+module.exports = function(){
+    return connection;
+}
