@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Judoca</title>
+	<meta charset="utf-8">
+    
+    <!-- Import Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/css/padrao.css" crossorigin="anonymous">
+</head>
+
+<body>
+    <span id="nav"></span>
+    <!-- Carrega menu de navegação -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#nav").load('/html/navbar.html');
+        });
+    </script>
+
+    <div id="div_rodape"></div>
+    <!-- Carrega rodapé -->
+    <script type="text/javascript">
+        $(document).ready(function(){
+          $("#div_rodape").load('/html/rodape.html');
+        });
+    </script>
+    
+    <div class="container" style="padding-bottom: 60px;">        
+        <br />
+            <!-- Título -->
+        <h3 style="color: #061991">Instituição</h3>
+
+        <br>
+            <!-- Campos -->        
+        <div class="row">
+            <div class="col-lg-4 justify-content-end">                
+                <input type="text" class="form-control" id="BuscaInst" placeholder="Busque por nome ou CNPJ de uma Instituição">
+                <br />
+            </div>
+        </div>
+        <div class="table-responsive pre-scrollable">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col" class="cabecalhoTable">Instituição</th>
+                        <th scope="col" class="cabecalhoTable">CNPJ</th>
+                        <th scope="col" class="cabecalhoTable">Telefone</th>
+                        <th scope="col" class="cabecalhoTable">Endereço</th>
+                        <th scope="col" class="cabecalhoTable">&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Balalala</td>
+                        <td>Balalala</td>
+                        <td>Balalala</td>
+                        <td>Balalala</td>
+                        <td>
+                            <button type="button" class="btn btn-default">
+                                <img src="/img/tres_pontinhos.png" width="25">    
+                            </button>                            
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>        
+    </div>    
+</body>
+</html>
