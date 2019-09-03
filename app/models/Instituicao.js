@@ -1,20 +1,6 @@
 function ModelInstituicao(app){
   this._connection = app.config.db_config;
 
-  this.query = function(sql, callback){
-    this._connection.connect(function(err){
-      if (err) throw err;
-      console.log("Connected!");
-      this._connection.query(
-        sql,
-        function(err, result){
-          if(err) throw err;
-          return callback(result);
-        }
-      )
-    })
-  }
-
   // Recebemos um objeto entidade e um objeto endereço e inserimos no banco
   this.insertInstituicao = function(instituicao){
     this._connection.beginTransaction(function(err) {

@@ -20,7 +20,8 @@ module.exports.insereInstituicao = function(app, req, res){
 
   var erros = req.validationErrors();
 
-  console.log(erros);
+  // TODO
+  // Caso haja erro, retornar mensagem para o usuário na tela
 
   endereco.setRua(dados.EndrInst);
   endereco.setNumero(dados.NumInst);
@@ -35,8 +36,6 @@ module.exports.insereInstituicao = function(app, req, res){
   instituicao.setTel2(dados.TelInst2);
   instituicao.setEndereco(endereco);
 
-  console.log(instituicao);
-
   var modelInstituicao = new app.app.models.Instituicao(app);
   modelInstituicao.insertInstituicao(instituicao);
 
@@ -48,5 +47,17 @@ module.exports.renderInstituicao = function(app, req, res){
 }
 
 module.exports.renderIndexInstituicao = function(app, req, res){
-  res.render('instituicao/index');
+    var endereco = new app.app.class.Endereco();
+    var instituicao = new app.app.class.Instituicao();
+
+    var modelQuery = new app.app.models.Query(app);
+    var sql = "SELECT I.nome, I.cnpj, I.tel1, I.tel2, E.rua, E.num, E.bairro " +
+              "FROM instituicao I INNER JOIN endereco E " +
+              "WHERE I.id_end = E.id_end;";
+
+    console.log(modelQuery);
+    modelQuery.query(sql, function(result){
+        console.log(result);
+        res.render('instituicao/index', {instConsulta: result});
+    });
 }

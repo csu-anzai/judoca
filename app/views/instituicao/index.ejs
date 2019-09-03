@@ -3,7 +3,7 @@
 <head>
 	<title>Judoca</title>
 	<meta charset="utf-8">
-    
+
     <!-- Import Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -29,8 +29,8 @@
           $("#div_rodape").load('/html/rodape.html');
         });
     </script>
-    
-    <div class="container" style="padding-bottom: 60px;">        
+
+    <div class="container" style="padding-bottom: 60px;">
         <br />
             <!-- Título -->
         <h3 style="color: #061991">Instituição</h3>
@@ -47,6 +47,7 @@
                         </button>
                     </div>
                 </div>
+
                 <br />
             </div>
         </div>
@@ -61,6 +62,14 @@
                         <th width="4%"scope="col" class="cabecalhoTable">&nbsp;</th>
                     </tr>
                 </thead>
+								<% for(var i = 0; i < instConsulta.length; i++){ %>
+										<tr>
+												<td><%= instConsulta[i].nome %></td>
+												<td><%= instConsulta[i].cnpj %></td>
+												<td><%= instConsulta[i].tel1 %>; <%= instConsulta[i].tel2 %></td
+												<td><%= instConsulta[i].rua %>, <%= instConsulta[i].num %>, <%= instConsulta[i].bairro %></td>
+										</tr>
+								<% } %>
                 <tbody>
                     <tr>
                         <td>Balalala</td>
@@ -82,7 +91,7 @@
                     </tr>
                 </tbody>
             </table>
-        </div>        
-    </div>    
+        </div>
+    </div>
 </body>
 </html>
